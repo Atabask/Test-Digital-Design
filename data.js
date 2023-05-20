@@ -171,3 +171,5 @@ export const clocks = [
         dateAdded: '2022-09-22'
     }
 ];
+
+export const colors = ['Красный', 'Синий', 'Белый', 'Черный']
