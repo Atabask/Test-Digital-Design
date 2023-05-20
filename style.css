@@ -4,6 +4,11 @@
     text-decoration: none;
 }
 
+body {
+    background: #ffeeed;
+    color: #000000;
+}
+
 header {
     position: sticky;
     top: 0;
@@ -12,22 +17,44 @@ header {
 }
 
 section {
-    height: 100vh
+    
 }
 
 h2 {
     text-align: center;
 }
 
+button {
+    padding: 5px
+}
+
+button:hover {
+    background-color: #ffeeed;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+}
+
+.dark-theme {
+    background: #121212;
+    color: #fffbfa;
+}
+
 .nav {
     display: flex;
     justify-content: center;
     gap: 40px;
-    padding: 20px;
+    padding: 20px;  
+    align-items: center
 }
 
 .container {
-    width: 80%;
+    width: 90%;
     margin: auto;
     padding: 50px;
 }
@@ -35,19 +62,25 @@ h2 {
 .content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     margin-bottom: 60px
 }
 
 .card {
     width: 300px;
-    height: auto;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 10px;
     padding: 10px;
     border: 1px solid #ccc;
+}
+
+.list-sections {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
 }
 
 .overlay {
@@ -61,12 +94,16 @@ h2 {
 }
 
 .form-buy {
-    width: 40%;
+    width: 20%;
     display: flex;
     flex-direction: column;
-    margin: 15% auto;
+    margin:15% auto;
     padding: 10px;
-    background-color: #fefefe;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    gap: 10px;
+    background-color: #ffeeed;
+    color: black;
 }
 
 #btn-back-to-top {

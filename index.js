@@ -1,5 +1,6 @@
 import { cars, phones, clocks } from './data.js'
 
+
 function getDayInfo(dateString) {
     const daysOfWeek = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота']
     const months = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря']
@@ -24,8 +25,10 @@ function renderCard(categoryId, cards) {
         productCard.classList.add('card')
     
         const productImg = document.createElement('img')
-        productImg.src = card.imgSrc
+        productImg.src = card.imageSrc
         productImg.alt = card.description
+        productImg.width = 300
+        productImg.height = 300
         productCard.appendChild(productImg)
 
         const productInfo = document.createElement('div')
