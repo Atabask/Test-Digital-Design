@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #ffeeed;
+    background: #fafafa;
     color: #000000;
 }
 
@@ -14,10 +14,7 @@ header {
     top: 0;
     width: 100%;
     background-color:  #f8f8f8;
-}
-
-section {
-    
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 h2 {
@@ -25,11 +22,14 @@ h2 {
 }
 
 button {
-    padding: 5px
+    padding: 10px;
+    border-radius: 10px
+    
 }
 
 button:hover {
     background-color: #ffeeed;
+    transition: 0.5s;
 }
 
 footer {
@@ -38,10 +38,11 @@ footer {
     background-color: #f8f8f8;
     display: flex;
     justify-content: center;
+    box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
 
 .dark-theme {
-    background: #121212;
+    background: #424242;
     color: #fffbfa;
 }
 
@@ -62,18 +63,30 @@ footer {
 .content {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 60px
+    justify-content: space-around;
+    margin-bottom: 60px;
 }
 
 .card {
     width: 300px;
-    height: 400px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+    box-shadow: 5px 10px 10px 5px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.5s; 
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .list-sections {

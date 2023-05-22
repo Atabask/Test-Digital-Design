@@ -2,16 +2,18 @@ import { cars, phones, clocks } from './data.js'
 
 
 function getDayInfo(dateString) {
-    const daysOfWeek = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота']
-    const months = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря']
+    const [day, month, year] = dateString.split('.').map(Number)
+    const date = new Date(year, month -1, day)
 
-    const date = new Date(dateString)
-    const dayOfWeek = daysOfWeek[date.getDay()]
-    const weekNumber = Math.ceil(date.getDay() / 7)
-    const month = months[date.getMonth()]
-    const year = date.getFullYear()
 
-    return `${dayOfWeek}, ${weekNumber} неделя ${month} ${year} года`
+    const daysOfWeek = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+    const months = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
+
+    const dayofWeek = daysOfWeek[date.getUTCDay()];
+    const weekNumber = Math.ceil((date.getDate() + 7 - date.getUTCDay()) / 7)
+    const monthName = months[date.getMonth()];
+
+    return `${dayofWeek}, ${weekNumber} неделя ${monthName} ${year} года`
 }
 
 function renderCard(categoryId, cards) {
@@ -39,8 +41,7 @@ function renderCard(categoryId, cards) {
         productInfo.appendChild(productDescription)
 
         const dateAdded = document.createElement('p')
-        dateAdded.classList.add('date-added')
-        dateAdded.innerText = `Дата добавления: ${getDayInfo(card.date)}`
+        dateAdded.innerText = `Дата добавления: ${getDayInfo(card.dateAdded)}`
         productInfo.appendChild(dateAdded)
 
         const btnBuy = document.createElement('button')
